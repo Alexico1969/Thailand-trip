@@ -117,6 +117,7 @@ textarea:focus-visible,
 }
 .bb-tab {
   flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,12 +125,19 @@ textarea:focus-visible,
   gap: 2px;
   background: transparent;
   color: var(--ink-soft);
-  font-size: 0.68rem;
+  font-size: 0.62rem;
   font-weight: 600;
   min-height: 100%;
   border-radius: 0;
+  padding: 4px 2px;
 }
-.bb-tab .icon { font-size: 1.3rem; }
+.bb-tab .icon { font-size: 1.15rem; }
+.bb-tab span:last-child {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .bb-tab[aria-current="true"] { color: var(--teal); }
 .bb-tab[aria-current="true"] .icon { transform: translateY(-1px); }
 
@@ -517,6 +525,54 @@ main.bb-panel.active { display: block; }
   text-align: left;
 }
 .history-item:last-child { border-bottom: none; }
+
+/* ---------- List rows (addresses, notes) ---------- */
+.list-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.list-row-main { min-width: 0; flex: 1; }
+.list-row-btn {
+  min-width: 0;
+  flex: 1;
+  display: block;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0;
+  min-height: auto;
+}
+.list-row-title { font-weight: 700; font-size: 0.92rem; }
+.list-row-sub {
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+  margin-top: 2px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.list-row-maps {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--teal-dim);
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.list-row-chevron { color: var(--ink-soft); font-size: 1.2rem; flex-shrink: 0; }
 
 /* ---------- Filter bar (menu decoder) ---------- */
 .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }

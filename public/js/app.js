@@ -1,6 +1,6 @@
 import { load, save } from './store.js';
 
-const TOOLS = ['dashboard', 'converter', 'routes', 'passport', 'planner', 'menu'];
+const TOOLS = ['dashboard', 'converter', 'routes', 'passport', 'planner', 'menu', 'addresses', 'notes'];
 const initialized = new Set();
 const toolModules = {};
 

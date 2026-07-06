@@ -8,7 +8,7 @@
 // would otherwise be served forever. Background revalidation below also
 // self-heals this for the *next* load, but the bump still matters for the
 // very first load after a fix ships.
-const CACHE_NAME = 'bangkok-buddy-v3';
+const CACHE_NAME = 'bangkok-buddy-v5';
 
 const STATIC_ASSETS = [
   '/',
@@ -19,12 +19,15 @@ const STATIC_ASSETS = [
   '/js/api.js',
   '/js/store.js',
   '/js/rates.js',
+  '/js/imageintake.js',
   '/js/tools/dashboard.js',
   '/js/tools/converter.js',
   '/js/tools/routes.js',
   '/js/tools/passport.js',
   '/js/tools/planner.js',
   '/js/tools/menu.js',
+  '/js/tools/addresses.js',
+  '/js/tools/notes.js',
   '/js/data/dishes.js',
   '/js/data/fairprices.js',
   '/js/data/transit.js',
