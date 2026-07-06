@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bangkok Buddy</title>
+<meta name="description" content="A personal Bangkok trip companion — prices, transit, food, and planning in one app.">
+<meta name="theme-color" content="#0E7C7B">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+
+<header class="bb-header">
+  <div class="brand"><span>🐘</span><span>Bangkok Buddy</span></div>
+  <div style="display:flex; align-items:center; gap:8px;">
+    <span class="countdown-pill" id="countdown-pill">✈️ trip</span>
+    <button class="settings-btn" id="settings-btn" aria-label="Settings">⚙️</button>
+  </div>
+</header>
+
+<main class="bb-panel active" id="panel-dashboard" data-tool="dashboard"></main>
+<main class="bb-panel" id="panel-converter" data-tool="converter"></main>
+<main class="bb-panel" id="panel-routes" data-tool="routes"></main>
+<main class="bb-panel" id="panel-passport" data-tool="passport"></main>
+<main class="bb-panel" id="panel-planner" data-tool="planner"></main>
+<main class="bb-panel" id="panel-menu" data-tool="menu"></main>
+
+<nav class="bb-tabbar" id="tabbar">
+  <button class="bb-tab" data-tab="dashboard" aria-current="true"><span class="icon">🏠</span><span>Home</span></button>
+  <button class="bb-tab" data-tab="converter"><span class="icon">💱</span><span>Prices</span></button>
+  <button class="bb-tab" data-tab="routes"><span class="icon">🚇</span><span>Routes</span></button>
+  <button class="bb-tab" data-tab="passport"><span class="icon">🍜</span><span>Food</span></button>
+  <button class="bb-tab" data-tab="planner"><span class="icon">🗓️</span><span>Planner</span></button>
+  <button class="bb-tab" data-tab="menu"><span class="icon">📖</span><span>Menu</span></button>
+</nav>
+
+<div id="settings-root"></div>
+
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

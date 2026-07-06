@@ -1,0 +1,12 @@
+{
+  "name": "bangkok-buddy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A personal Bangkok trip companion app.",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
