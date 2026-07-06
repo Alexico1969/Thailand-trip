@@ -1,5 +1,10 @@
 // Exchange rate fetch + daily cache. Frankfurter is free and keyless.
+// Note: api.frankfurter.app 301-redirects to api.frankfurter.dev, and the
+// redirect response itself carries no CORS headers (only the .dev origin
+// does), so browsers block the redirected fetch. Call .dev directly.
 import { load, save } from './store.js';
+
+const FRANKFURTER_BASE = 'https://api.frankfurter.dev/v1';
 
 const LATEST_KEY = 'rates:latest';
 const TREND_KEY = 'rates:trend30d';
@@ -18,7 +23,7 @@ function daysAgoStamp(n) {
 export async function getLatestRates() {
   const cached = load(LATEST_KEY, null);
   try {
-    const res = await fetch('https://api.frankfurter.app/latest?from=USD&to=THB,EUR');
+    const res = await fetch(`${FRANKFURTER_BASE}/latest?from=USD&to=THB,EUR`);
     if (!res.ok) throw new Error(`rate fetch failed (${res.status})`);
     const data = await res.json();
     const fresh = {
@@ -40,7 +45,7 @@ export async function getTrend30d() {
   const cached = load(TREND_KEY, null);
   try {
     const from = daysAgoStamp(30);
-    const res = await fetch(`https://api.frankfurter.app/${from}..?from=USD&to=THB`);
+    const res = await fetch(`${FRANKFURTER_BASE}/${from}..?from=USD&to=THB`);
     if (!res.ok) throw new Error(`trend fetch failed (${res.status})`);
     const data = await res.json();
     const series = Object.entries(data.rates || {})
