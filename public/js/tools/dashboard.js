@@ -112,6 +112,7 @@ async function loadRates(card) {
         </div>
         <div class="rate-sub">€1 = $${(1 / rates.eur).toFixed(2)} · $1 = €${rates.eur.toFixed(3)}</div>
       </div>
+      <div class="rate-sub" style="margin-top:4px;">฿1,000 ≈ <strong>$${(1000 / rates.thb).toFixed(2)}</strong></div>
       ${sparkline}
       <div class="rate-sub" style="margin-top:6px;">30-day trend, USD→THB</div>
     `;

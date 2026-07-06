@@ -8,7 +8,7 @@
 // would otherwise be served forever. Background revalidation below also
 // self-heals this for the *next* load, but the bump still matters for the
 // very first load after a fix ships.
-const CACHE_NAME = 'bangkok-buddy-v2';
+const CACHE_NAME = 'bangkok-buddy-v3';
 
 const STATIC_ASSETS = [
   '/',
